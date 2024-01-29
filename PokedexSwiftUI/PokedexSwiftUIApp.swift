@@ -11,7 +11,7 @@ import SwiftUI
 struct PokedexSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            FirstOnboardingView()
+            OnboardingView(viewModel: OnboardingViewModel())
         }
     }
 }
