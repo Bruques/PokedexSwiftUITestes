@@ -7,73 +7,66 @@
 
 import SwiftUI
 
+enum OnboardingSteps: Int {
+    case onboardingFirstStep
+    case onboardingLastStep
+}
+
 struct OnboardingView: View {
-    @ObservedObject var viewModel: OnboardingViewModel
+    enum Constants {
+        static let trainer1 = "trainer1"
+        static let trainer2 = "trainer2"
+        static let trainer3 = "trainer3"
+        static let shadowTrainer = "shadowTrainer"
+    }
+    
+    @StateObject var viewModel: OnboardingViewModel = OnboardingViewModel()
     var body: some View {
+        
         NavigationView {
             TabView(selection: $viewModel.currentStep) {
-                ForEach(0..<viewModel.onboardingSteps.count, id: \.self) { index in
+                ForEach(Array(viewModel.onboardingSteps.enumerated()), 
+                        id: \.offset) { index, step  in
                     VStack {
-                        trainersImages()
+                        trainersImages(stepIndex: index)
                         Spacer().frame(height: 45)
-                        titleAndDescription(title: viewModel.onboardingSteps[index].title,
-                                            description: viewModel.onboardingSteps[index].description)
+                        titleAndDescription(title: step.title,
+                                            description: step.description)
                         Spacer().frame(height: 50)
-                        continueButton(buttonText: viewModel.onboardingSteps[index].buttonText)
+                        continueButton(buttonText: step.buttonText)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .padding()
-                    .overlay {
-                        if index == 0 {
-                            GeometryReader { proxy -> Color in
-                                let minX = proxy.frame(in: .global).minX
-                                print(-minX)
-                                DispatchQueue.main.async {
-                                    withAnimation(.default) {
-                                        self.viewModel.offSet = -minX
-                                    }
-                                }
-                                return Color.clear
-                            }
-                        }
-                    }
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .padding()
             .overlay {
-                HStack(spacing: 8) {
-                    ForEach(viewModel.onboardingSteps.indices, id: \.self) { index in
-                        Capsule()
-                            .foregroundStyle(index == viewModel.currentStep ? Color("Blue") : Color("Secondary"))
-                            .frame(width: getIndex() == index ? 28 : 9, height: 9)
-                    }
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                .padding(.bottom, 95)
+                onboardingIndicator
             }
         }
     }
     
     @ViewBuilder
-    func trainersImages() -> some View {
-        if viewModel.currentStep == 0 {
+    func trainersImages(stepIndex: Int) -> some View {
+        if stepIndex == OnboardingSteps.onboardingFirstStep.rawValue {
             HStack(spacing: -150) {
-                Image("trainer1")
+                Image(Constants.trainer1)
                     .background {
-                        Image("shadowTrainer3")
+                        Image(Constants.shadowTrainer)
                             .offset(x: -15, y: 110)
                     }
-                Image("trainer2")
+                Image(Constants.trainer2)
                     .background {
-                        Image("shadowTrainer3")
+                        Image(Constants.shadowTrainer)
                             .offset(y: 120)
                     }
             }
         } else {
             HStack {
-                Image("trainer3")
+                Image(Constants.trainer3)
                     .background {
-                        Image("shadowTrainer3")
+                        Image(Constants.shadowTrainer)
                             .offset(x: -10, y: 120)
                     }
             }
@@ -83,54 +76,66 @@ struct OnboardingView: View {
     func titleAndDescription(title: String, description: String) -> some View {
         VStack(spacing: 16) {
             Text(title)
-                .font(Font.custom("Poppins-Medium", size: 26))
+                .font(FontMaker.makeFont(.poppinsMedium, 26))
                 .multilineTextAlignment(.center)
             Text(description)
-                .font(Font.custom("Poppins", size: 14))
+                .font(FontMaker.makeFont(.poppinsRegular, 14))
                 .multilineTextAlignment(.center)
-                .foregroundStyle(Color("Secondary"))
+                .foregroundStyle(PokedexColors.secondary)
         }
     }
     
-    func continueButton(buttonText: String) -> some View {
-        NavigationLink(
-            destination: Text("Destination"),
-            isActive: $viewModel.changeToLoginPage,
-            label: {
-                Button {
-                    if viewModel.currentStep == 1 {
-                        viewModel.changeToLoginPage = true
-                    }
-                    if viewModel.currentStep < viewModel.onboardingSteps.count - 1 {
-                        viewModel.currentStep += 1
-                    }
-                     
-                } label: {
-                    Rectangle()
-                        .clipShape(.capsule)
-                        .frame(height: 58)
-                        .foregroundStyle(Color("Blue"))
-                        .overlay {
-                            Text(buttonText)
-                                .font(Font.custom("Poppins-SemiBold", size: 18))
-                                .foregroundStyle(.white)
-                        }
-                }
-            })
+    var onboardingIndicator: some View {
+        HStack(spacing: 8) {
+            ForEach(viewModel.onboardingSteps.indices, id: \.self) { index in
+                Capsule()
+                    .foregroundStyle(index == viewModel.currentStep ? PokedexColors.blue : PokedexColors.secondary)
+                    .frame(width: viewModel.currentStep == index ? 28 : 9, height: 9)
+                    .animation(.bouncy, value: viewModel.currentStep)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .padding(.bottom, 110)
     }
     
-    func getIndex() -> Int {
-        let index = Int(round(Double(viewModel.offSet / getWitdh())))
-        return index
-    }
-}
-
-extension View {
-    func getWitdh() -> CGFloat {
-        return UIScreen.main.bounds.width
+    @ViewBuilder
+    func continueButton(buttonText: String) -> some View {
+        if viewModel.currentStep == OnboardingSteps.onboardingFirstStep.rawValue {
+            Button {
+                withAnimation {
+                    viewModel.currentStep += 1
+                }
+            } label: {
+                Rectangle()
+                    .clipShape(.capsule)
+                    .frame(height: 58)
+                    .foregroundStyle(PokedexColors.blue)
+                    .overlay {
+                        Text(buttonText)
+                            .font(FontMaker.makeFont(.poppinsSemiBold, 18))
+                            .foregroundStyle(.white)
+                    }
+            }
+        } else {
+            NavigationLink {
+                LoginOrSignUp()
+                    .navigationBarBackButtonHidden()
+            } label: {
+                Rectangle()
+                    .clipShape(.capsule)
+                    .frame(height: 58)
+                    .foregroundStyle(PokedexColors.blue)
+                    .overlay {
+                        Text(buttonText)
+                            .font(FontMaker.makeFont(.poppinsSemiBold, 18))
+                            .foregroundStyle(.white)
+                    }
+            }
+        }
     }
 }
 
 #Preview {
-    OnboardingView(viewModel: OnboardingViewModel())
+    OnboardingView()
 }
+
