@@ -12,7 +12,6 @@ class OnboardingViewModel: ObservableObject {
     @Published var currentStep: Int = 0
     @Published var onboardingSteps: [OnboardingStep] = []
     @Published var offSet: CGFloat = 0
-    @Published var changeToLoginPage: Bool = false
     
     init() {
         setupOnbardingSteps()
