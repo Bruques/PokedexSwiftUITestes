@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E30C0E52B71F1EF0048C056 /* SignUpEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E30C0E42B71F1EF0048C056 /* SignUpEmailView.swift */; };
+		0E3EFED02B71B9620047BDEF /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EFECF2B71B9620047BDEF /* SignUpView.swift */; };
+		0E3EFED42B71C5C50047BDEF /* MyCustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EFED32B71C5C50047BDEF /* MyCustomToolbar.swift */; };
 		0E4FB3212B6578E600E35366 /* PokedexSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FB3202B6578E600E35366 /* PokedexSwiftUIApp.swift */; };
 		0E4FB3232B6578E600E35366 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FB3222B6578E600E35366 /* ContentView.swift */; };
 		0E4FB3252B6578E700E35366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FB3242B6578E700E35366 /* Assets.xcassets */; };
@@ -21,12 +24,15 @@
 		0E4FB35B2B657F9D00E35366 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FB3582B657F9D00E35366 /* Poppins-Medium.ttf */; };
 		0E4FB35C2B657F9D00E35366 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FB3592B657F9D00E35366 /* Poppins-Bold.ttf */; };
 		0E4FB35F2B65815200E35366 /* MyColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4FB35E2B65815200E35366 /* MyColors.xcassets */; };
+		0E69A9052B797D4E00CB4F8E /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69A9042B797D4E00CB4F8E /* SignUpPasswordView.swift */; };
+		0E69A9072B79A6A800CB4F8E /* SignUpUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69A9062B79A6A800CB4F8E /* SignUpUserNameView.swift */; };
 		0E7139222B66A0CC004033C4 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7139212B66A0CC004033C4 /* OnboardingStep.swift */; };
 		0E7139242B66A10A004033C4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7139232B66A10A004033C4 /* OnboardingViewModel.swift */; };
-		0E7139312B67582C004033C4 /* LoginOrSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7139302B67582C004033C4 /* LoginOrSignUp.swift */; };
+		0E7139312B67582C004033C4 /* LoginOrSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7139302B67582C004033C4 /* LoginOrSignUpView.swift */; };
+		0E7FE42F2B73151E0010AB9F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7FE42E2B73151E0010AB9F /* SignUpViewModel.swift */; };
+		0E7FE4312B7315B40010AB9F /* LoginOrSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7FE4302B7315B40010AB9F /* LoginOrSignUpViewModel.swift */; };
 		0E88A6C22B6B0FD800128E36 /* FontNamesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88A6C12B6B0FD800128E36 /* FontNamesEnum.swift */; };
 		0E88A6C52B6B131E00128E36 /* PokedexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88A6C42B6B131E00128E36 /* PokedexColors.swift */; };
-		0E88A6C72B6B172E00128E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E88A6C62B6B172E00128E36 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E30C0E42B71F1EF0048C056 /* SignUpEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailView.swift; sourceTree = "<group>"; };
+		0E3EFECF2B71B9620047BDEF /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		0E3EFED32B71C5C50047BDEF /* MyCustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomToolbar.swift; sourceTree = "<group>"; };
 		0E4FB31D2B6578E600E35366 /* PokedexSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4FB3202B6578E600E35366 /* PokedexSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexSwiftUIApp.swift; sourceTree = "<group>"; };
 		0E4FB3222B6578E600E35366 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,12 +74,15 @@
 		0E4FB3582B657F9D00E35366 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		0E4FB3592B657F9D00E35366 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		0E4FB35E2B65815200E35366 /* MyColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MyColors.xcassets; sourceTree = "<group>"; };
+		0E69A9042B797D4E00CB4F8E /* SignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
+		0E69A9062B79A6A800CB4F8E /* SignUpUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserNameView.swift; sourceTree = "<group>"; };
 		0E7139212B66A0CC004033C4 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 		0E7139232B66A10A004033C4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		0E7139302B67582C004033C4 /* LoginOrSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUp.swift; sourceTree = "<group>"; };
+		0E7139302B67582C004033C4 /* LoginOrSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpView.swift; sourceTree = "<group>"; };
+		0E7FE42E2B73151E0010AB9F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		0E7FE4302B7315B40010AB9F /* LoginOrSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpViewModel.swift; sourceTree = "<group>"; };
 		0E88A6C12B6B0FD800128E36 /* FontNamesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNamesEnum.swift; sourceTree = "<group>"; };
 		0E88A6C42B6B131E00128E36 /* PokedexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexColors.swift; sourceTree = "<group>"; };
-		0E88A6C62B6B172E00128E36 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E3EFECC2B71B92A0047BDEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E7139302B67582C004033C4 /* LoginOrSignUpView.swift */,
+				0E3EFECF2B71B9620047BDEF /* SignUpView.swift */,
+				0E30C0E42B71F1EF0048C056 /* SignUpEmailView.swift */,
+				0E69A9042B797D4E00CB4F8E /* SignUpPasswordView.swift */,
+				0E69A9062B79A6A800CB4F8E /* SignUpUserNameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E3EFECD2B71B92F0047BDEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E7FE42E2B73151E0010AB9F /* SignUpViewModel.swift */,
+				0E7FE4302B7315B40010AB9F /* LoginOrSignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0E3EFECE2B71B9330047BDEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E3EFED12B71C5A30047BDEF /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				0E3EFED22B71C5A80047BDEF /* ReusableComponents */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		0E3EFED22B71C5A80047BDEF /* ReusableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0E3EFED32B71C5C50047BDEF /* MyCustomToolbar.swift */,
+			);
+			path = ReusableComponents;
+			sourceTree = "<group>";
+		};
 		0E4FB3142B6578E600E35366 = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +177,14 @@
 		0E4FB31F2B6578E600E35366 /* PokedexSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0E3EFED12B71C5A30047BDEF /* Commons */,
 				0E4FB3542B657EEC00E35366 /* Info.plist */,
 				0E4FB3502B657D6E00E35366 /* Utils */,
+				0E71392F2B6750DE004033C4 /* LoginAndSignUp */,
 				0E4FB34A2B657A0700E35366 /* Onboarding */,
 				0E4FB3202B6578E600E35366 /* PokedexSwiftUIApp.swift */,
 				0E4FB3222B6578E600E35366 /* ContentView.swift */,
 				0E4FB3262B6578E700E35366 /* Preview Content */,
-				0E88A6C62B6B172E00128E36 /* LaunchScreen.storyboard */,
 			);
 			path = PokedexSwiftUI;
 			sourceTree = "<group>";
@@ -195,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				0E88A6C32B6B130200128E36 /* Colors */,
-				0E71392F2B6750DE004033C4 /* LoginAndSignUp */,
 				0E4FB35D2B65813D00E35366 /* Assets */,
 				0E4FB3512B657D7600E35366 /* Fonts */,
 			);
@@ -227,7 +283,9 @@
 		0E71392F2B6750DE004033C4 /* LoginAndSignUp */ = {
 			isa = PBXGroup;
 			children = (
-				0E7139302B67582C004033C4 /* LoginOrSignUp.swift */,
+				0E3EFECE2B71B9330047BDEF /* Model */,
+				0E3EFECD2B71B92F0047BDEF /* ViewModel */,
+				0E3EFECC2B71B92A0047BDEF /* View */,
 			);
 			path = LoginAndSignUp;
 			sourceTree = "<group>";
@@ -344,7 +402,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E88A6C72B6B172E00128E36 /* LaunchScreen.storyboard in Resources */,
 				0E4FB35A2B657F9D00E35366 /* Poppins-SemiBold.ttf in Resources */,
 				0E4FB3532B657DA800E35366 /* Poppins-Regular.ttf in Resources */,
 				0E4FB35C2B657F9D00E35366 /* Poppins-Bold.ttf in Resources */,
@@ -381,9 +438,16 @@
 				0E7139242B66A10A004033C4 /* OnboardingViewModel.swift in Sources */,
 				0E88A6C22B6B0FD800128E36 /* FontNamesEnum.swift in Sources */,
 				0E4FB3232B6578E600E35366 /* ContentView.swift in Sources */,
-				0E7139312B67582C004033C4 /* LoginOrSignUp.swift in Sources */,
+				0E69A9072B79A6A800CB4F8E /* SignUpUserNameView.swift in Sources */,
+				0E7139312B67582C004033C4 /* LoginOrSignUpView.swift in Sources */,
+				0E30C0E52B71F1EF0048C056 /* SignUpEmailView.swift in Sources */,
 				0E4FB3212B6578E600E35366 /* PokedexSwiftUIApp.swift in Sources */,
+				0E7FE4312B7315B40010AB9F /* LoginOrSignUpViewModel.swift in Sources */,
 				0E7139222B66A0CC004033C4 /* OnboardingStep.swift in Sources */,
+				0E3EFED42B71C5C50047BDEF /* MyCustomToolbar.swift in Sources */,
+				0E3EFED02B71B9620047BDEF /* SignUpView.swift in Sources */,
+				0E69A9052B797D4E00CB4F8E /* SignUpPasswordView.swift in Sources */,
+				0E7FE42F2B73151E0010AB9F /* SignUpViewModel.swift in Sources */,
 				0E4FB34F2B657AB900E35366 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

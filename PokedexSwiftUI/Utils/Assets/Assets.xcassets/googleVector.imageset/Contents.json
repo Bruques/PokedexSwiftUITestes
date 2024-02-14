@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "trainer2.png",
+      "filename" : "vecteezy_colourful-google-logo-on-white-background_10353285.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "preserves-vector-representation" : true
   }
 }

@@ -21,8 +21,8 @@ struct OnboardingView: View {
     }
     
     @StateObject var viewModel: OnboardingViewModel = OnboardingViewModel()
+    
     var body: some View {
-        
         NavigationView {
             TabView(selection: $viewModel.currentStep) {
                 ForEach(Array(viewModel.onboardingSteps.enumerated()), 
@@ -118,7 +118,7 @@ struct OnboardingView: View {
             }
         } else {
             NavigationLink {
-                LoginOrSignUp()
+                LoginOrSignUpView()
                     .navigationBarBackButtonHidden()
             } label: {
                 Rectangle()
